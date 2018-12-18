@@ -1,5 +1,16 @@
 <div class="view">
-  <input class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
-  <label>{{todo.title}}</label>
+  <input
+    class="toggle"
+    type="checkbox"
+    (click)="toggleTodoComplete(todo)"
+    [checked]="todo.complete"
+  />
+  <div class="todo-details">
+    <p>{{todo.title}}</p>
+    <p>{{todo.created | date:'medium'}}</p>
+    <div *ngIf="todo.complete">
+      <p class="red">{{todo.completed | date:'medium'}}</p>
+    </div>
+  </div>
   <button class="destroy" (click)="removeTodo(todo)"></button>
 </div>

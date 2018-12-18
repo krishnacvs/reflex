@@ -1,6 +1,8 @@
 export class Todo {
   id: number;
-  title: string = '';
+  title: string = "";
+  created: date = new Date();
+  completed: date = "";
   complete: boolean = false;
 
   constructor(values: Object = {}) {
